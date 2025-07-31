@@ -37,7 +37,7 @@ nlp = spacy.load("en_core_web_sm")
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 bert_model = AutoModel.from_pretrained("bert-base-uncased")
 
-API_TOKEN = "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"
+
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
