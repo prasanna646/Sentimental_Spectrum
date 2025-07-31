@@ -1,0 +1,109 @@
+/* Base body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: url('/bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* Transparent all sections */
+header, nav, main, section, article, aside, footer, div {
+  background: transparent !important;
+}
+
+/* Header styling with color and animation */
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue */
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 20px 20px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* Header animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Textbox/input styling */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  font-size: 16px;
+  background: rgba(255,255,255,0.8);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Circular button styles */
+.circular-button {
+  width: 60px;
+  height: 60px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.circular-button.clicked {
+  background-color: #4CAF50;
+}
+
+.circular-button:hover {
+  transform: scale(1.05);
+}
+
+/* Optional label below circular button */
+.circular-button span {
+  position: absolute;
+  bottom: -25px;
+  font-size: 14px;
+  color: white;
+}
